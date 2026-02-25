@@ -1,6 +1,6 @@
 terraform {
   backend "remote" {
-    hostname = "app.terraform.io"
+    hostname     = "app.terraform.io"
     organization = "kandreasyan"
 
     workspaces {
@@ -11,5 +11,5 @@ terraform {
 
 data "tfe_outputs" "aws_network" {
   organization = "kandreasyan"
-  workspace = "1-aws-network-${local.environment}"
+  workspace    = "1-aws-network-${local.environment}"
 }

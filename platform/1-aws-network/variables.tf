@@ -12,7 +12,7 @@ variable "aws_region" {
 
 variable "project" {
   description = "Project Name"
-  type = string
-  default = "platform"
-  nullable = false
+  type        = string
+  default     = "platform"
+  nullable    = false
 }
