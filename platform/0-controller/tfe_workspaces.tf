@@ -22,6 +22,13 @@ resource "tfe_workspace" "aws_network" {
   }
 }
 
+resource "tfe_workspace_settings" "aws_network" {
+  for_each = local.tfe_environments
+
+  workspace_id = tfe_workspace.aws_network[each.key].id
+  auto_apply   = strcontains(each.key, "dev")
+}
+
 resource "tfe_workspace" "aws_eks" {
   for_each = local.tfe_environments
 
@@ -44,4 +51,11 @@ resource "tfe_workspace" "aws_eks" {
     github_app_installation_id = "ghain-7V61WP9MqRtjdyvU"
     identifier                 = "kandreasyan/awesome-terraform"
   }
+}
+
+resource "tfe_workspace_settings" "aws_eks" {
+  for_each = local.tfe_environments
+
+  workspace_id = tfe_workspace.aws_eks[each.key].id
+  auto_apply   = strcontains(each.key, "dev")
 }
