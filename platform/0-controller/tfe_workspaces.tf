@@ -11,7 +11,7 @@ resource "tfe_workspace" "aws_network" {
   }
 
   trigger_patterns = [
-    "platform/1-aws-network",
+    "platform/1-aws-network/**/*",
   ]
   working_directory = "platform/1-aws-network"
 
@@ -42,7 +42,7 @@ resource "tfe_workspace" "aws_eks" {
   }
 
   trigger_patterns = [
-    "platform/2-aws-eks",
+    "platform/2-aws-eks/**/*",
   ]
   working_directory = "platform/2-aws-eks"
 
