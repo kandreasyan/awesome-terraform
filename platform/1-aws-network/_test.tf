@@ -2,7 +2,7 @@ resource "random_pet" "test" {
   length = 2
 }
 
-ephemeral "random_password" "password" {
+ephemeral "random_password" "test" {
   length           = 16
   special          = false
 }
